@@ -2,27 +2,26 @@
 
 
 
-import 'package:agile/src/view/chapter.dart';
 import 'package:flutter/material.dart';
 
-class Syllabus extends StatelessWidget {
+class Chapter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width*0.8,
-      child: SyllabusItem(),
+      child: ChapterItem(),
     );
   }
 }
 
-class SyllabusItem extends StatefulWidget {
+class ChapterItem extends StatefulWidget {
 
   @override
-  _SyllabusItem createState() => _SyllabusItem();
+  _ChapterItem createState() => _ChapterItem();
 }
 
-class _SyllabusItem extends State<SyllabusItem> {
+class _ChapterItem extends State<ChapterItem> {
 
 
   @override
@@ -40,19 +39,13 @@ class _SyllabusItem extends State<SyllabusItem> {
     for(int i = 1; i<20; i++){
       list.add(GestureDetector(
         onTap: (){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Chapter()),
-          );
+          Navigator.pop(context);
         },
         child: Container(
-
-            height: size.height*0.1,
-            width: size.width*0.9,
-            color: Colors.green,
+            color: Colors.orangeAccent,
             padding: EdgeInsets.all(20),
             child: new Text(
-                "Cuong"+i.toString())),
+                "Chapter"+i.toString())),
       ));
     }
 
